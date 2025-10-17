@@ -163,6 +163,7 @@ Deberás ver los DAGs similares a la siguiente imagen
 <img width="1919" height="1137" alt="image" src="https://github.com/user-attachments/assets/9bc61b0d-4f5b-46ba-8e7c-c12cc88ebdc9" />
 
 3. Ejecuta los DAGs en el siguiente orden:
+
 1️⃣ cargar_fact_productos_exportados      # Crea la BD y sus tablas
 2️⃣ cargar_fact_exportaciones_paises      # Añade tablas de países
 3️⃣ cargar_fact_precio_fob                # Añade tablas de precios
