@@ -28,6 +28,9 @@ Antes de comenzar, asegúrate de tener instalado **Docker** y **Docker Compose**
 ### 1️⃣ Clonar el repositorio
 ```bash
 git clone https://github.com/zKeeni/proyecto-bi-infra.git
+```
+Acceda al directorio de la carpeta clonada
+```bash
 cd proyecto-bi-infra
 ```
 ### 2️⃣ Configurar Apache Airflow
