@@ -57,7 +57,7 @@ Antes de comenzar, asegúrate de tener instalado **Docker** y **Docker Compose**
 
 ---
 
-##🧩 Instalación y Configuración
+## 🧩 Instalación y Configuración
 
 ### 1️⃣ Clonar el repositorio
 ```bash
@@ -147,6 +147,7 @@ docker compose up -d
 
 Una vez iniciado, Redash estará disponible en:
 👉 http://localhost:5000
+
 --- 
 ## 🧠 Uso del Proyecto
 
@@ -157,11 +158,15 @@ Una vez que los tres servicios estén activos (Airflow, Hive y Redash), sigue lo
 1. Abre Airflow:
 👉 http://localhost:8080/dags
 
-2. En la barra de búsqueda, escribe cargar para listar los DAGs del proyecto.
+2. En la barra de búsqueda, escribe "cargar" para listar los DAGs del proyecto.
 Deberás ver los DAGs similares a la siguiente imagen
 <img width="1919" height="1137" alt="image" src="https://github.com/user-attachments/assets/9bc61b0d-4f5b-46ba-8e7c-c12cc88ebdc9" />
 
-Ejecuta los DAGs en el siguiente orden:
+3. Ejecuta los DAGs en el siguiente orden:
+1️⃣ cargar_fact_productos_exportados      # Crea la BD y sus tablas
+2️⃣ cargar_fact_exportaciones_paises      # Añade tablas de países
+3️⃣ cargar_fact_precio_fob                # Añade tablas de precios
+4️⃣ cargar_fact_produccion_superficie     # Añade tablas de producción
 
 🗃️ Tras ejecutar estos DAGs, la base de datos cacao se escribirá dentro de Hive.
 Asegúrate de tener ambos contenedores (Airflow y Hive) levantados
@@ -178,6 +183,7 @@ Contraseña: admin123
 Una vez dentro del panel de control, accede a Dashboards.
 
 Podrás refrescar los dashboards con la información cargada desde Hive.
+<img width="1919" height="1137" alt="image" src="https://github.com/user-attachments/assets/dbd3fcb8-ea2d-4224-8eda-aca2b6171b6d" />
 
 🔗 En Redash, toda la configuración de conexión, consultas SQL y dashboards ya está preconfigurada.
 Solo asegúrate de que los pasos de Airflow y Hive se hayan ejecutado correctamente para evitar errores de datos inexistentes.
