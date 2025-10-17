@@ -31,7 +31,7 @@ git clone https://github.com/zKeeni/proyecto-bi-infraestructura.git
 ```
 Acceda al directorio de la carpeta clonada
 ```bash
-cd proyecto-bi-infra
+cd proyecto-bi-infraestructura/
 ```
 ### 2️⃣ Configurar Apache Airflow
 ```bash
