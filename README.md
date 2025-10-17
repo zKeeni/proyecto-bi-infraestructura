@@ -79,7 +79,7 @@ Hive Server2 estará disponible en el puerto configurado (por defecto: 10000).
 
 ### 4️⃣ Configurar Redash
 ```bash
-cd ../redash
+cd ../../redash
 ```
 
 Crear el archivo .env:
