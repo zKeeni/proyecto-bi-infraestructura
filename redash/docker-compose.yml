@@ -1,0 +1,73 @@
+services:
+  # Servidor web / API
+  server:
+    image: redash/redash:latest
+    container_name: redash_server
+    ports:
+      - "5000:5000"
+    env_file: .env
+    depends_on:
+      - postgres
+      - redis
+    networks:
+      - redash_default
+      - hive-airflow-net
+
+  # Worker de consultas
+  worker:
+    image: redash/redash:latest
+    container_name: redash_worker
+    command: worker
+    env_file: .env
+    depends_on:
+      - server
+      - postgres
+      - redis
+    networks:
+      - redash_default
+      - hive-airflow-net
+
+  # Scheduler de queries
+  scheduler:
+    image: redash/redash:latest
+    container_name: redash_scheduler
+    command: scheduler
+    env_file: .env
+    depends_on:
+      - server
+      - postgres
+      - redis
+    networks:
+      - redash_default
+      - hive-airflow-net
+
+  # Base de datos de Redash
+  postgres:
+    image: postgres:13
+    container_name: redash_postgres
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - redash_postgres_data:/var/lib/postgresql/data
+    networks:
+      - redash_default
+
+  # Redis para tareas en background
+  redis:
+    image: redis:7.2
+    container_name: redash_redis
+    volumes:
+      - redash_redis_data:/data
+    networks:
+      - redash_default
+
+volumes:
+  redash_postgres_data:
+  redash_redis_data:
+
+networks:
+  redash_default:
+    driver: bridge
+  hive-airflow-net:
+    external: true
+

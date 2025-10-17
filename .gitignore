@@ -1,0 +1,23 @@
+# Airflow
+airflow/logs/
+airflow/*.env
+
+# Scripts locales de ejecución
+detener_contenedores.sh
+levantar_contenedores.sh
+
+# Hive
+hive/hive_warehouse/
+hive/postgres_data/
+hive/hdfs/
+hive/hive-logs/
+
+# Redash
+redash/redash_postgres_data/
+redash/redis/
+redash/*.env
+
+# Otros archivos temporales
+*.pyc
+__pycache__/
+
