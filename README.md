@@ -21,15 +21,28 @@ Si te encuentras en **Windows**, puedes usar **WSL (Windows Subsystem for Linux)
 
 ⚙️ Requisitos del Sistema
 
-Para una ejecución fluida del entorno completo (Airflow + Hive + Redash):
+Para ejecutar correctamente todo el entorno (Airflow + Hive + Redash), se recomienda contar con un equipo con recursos suficientes para soportar la carga de los tres contenedores.
 
-Recurso	Mínimo Recomendado	Recomendado
-CPU	Intel Core i7 (10ma generación o superior)	Intel Core i9 13ma generación
-RAM	16 GB	32 GB o más
-Sistema Operativo	Linux / WSL2 con Ubuntu	Ubuntu 22.04 o superior
+Requisitos mínimos:
 
-⚠️ Durante las pruebas, con los tres contenedores activos, el sistema llegó a utilizar más de 16 GB de RAM.
-Si notas que tu equipo se vuelve lento o el sistema se congela, no se recomienda continuar la ejecución simultánea de los tres servicios.
+💻 Procesador: Intel Core i7 (10.ª generación o superior)
+
+🧠 Memoria RAM: 16 GB
+
+🐧 Sistema operativo: Linux nativo o WSL2 con Ubuntu 22.04 o superior
+
+💾 Almacenamiento: El espacio necesario dependerá del tamaño de los datos y de los contenedores; WSL o Linux gestionan esto internamente.
+
+Equipo en el que se probó el proyecto:
+
+💻 Procesador: Intel Core i9 (13.ª generación)
+
+🧠 Memoria RAM: 32 GB
+
+>⚠️ Recomendación:
+Durante las pruebas, el entorno completo llegó a utilizar más de 16 GB de RAM.
+Si tu equipo cuenta con 16 GB, es posible que notes lentitud o sobrecarga al ejecutar los tres contenedores simultáneamente.
+En ese caso, se sugiere disponer de más memoria o levantar los servicios por separado.
 
 El espacio en disco lo gestiona internamente WSL o el sistema Linux.
 
