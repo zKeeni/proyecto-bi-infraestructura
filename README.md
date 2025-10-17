@@ -98,6 +98,12 @@ REDASH_DATABASE_URL=postgresql://postgres:postgres@redash_postgres/postgres
 REDASH_REDIS_URL=redis://redis:6379/0
 ```
 
+Si desea ocupar esta misma configuración ya incluida, entonces cambie el nombre del archivo de ejemplo a .env
+```bash
+mv .env.example .env
+```
+
+
 💡 Puedes cambiar estas claves si deseas mayor seguridad, pero recuerda actualizar el docker-compose.yml en consecuencia.
 
 Levantar Redash:
