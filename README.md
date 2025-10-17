@@ -25,19 +25,12 @@ Para ejecutar correctamente todo el entorno (Airflow + Hive + Redash), se recomi
 
 Requisitos mínimos:
 
-💻 Procesador: Intel Core i7 (10.ª generación o superior)
-
-🧠 Memoria RAM: 16 GB
-
-🐧 Sistema operativo: Linux nativo o WSL2 con Ubuntu 22.04 o superior
-
-💾 Almacenamiento: El espacio necesario dependerá del tamaño de los datos y de los contenedores; WSL o Linux gestionan esto internamente.
+- 💻 Procesador: Intel Core i7 (10.ª generación o superior)
+- 🧠 Memoria RAM: 16 GB
 
 Equipo en el que se probó el proyecto:
-
-💻 Procesador: Intel Core i9 (13.ª generación)
-
-🧠 Memoria RAM: 32 GB
+- 💻 Procesador: Intel Core i9 (13.ª generación)
+- 🧠 Memoria RAM: 32 GB
 
 >⚠️ Recomendación:
 Durante las pruebas, el entorno completo llegó a utilizar más de 16 GB de RAM.
