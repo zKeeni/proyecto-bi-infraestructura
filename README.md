@@ -5,6 +5,34 @@ El entorno se basa en **contenedores Docker**, integrando herramientas de orques
 
 ---
 
+## 💻 Entorno de Ejecución
+
+Este proyecto fue desarrollado y probado en un entorno **Linux (Ubuntu 24.04)**.  
+Si te encuentras en **Windows**, puedes usar **WSL (Windows Subsystem for Linux)** para ejecutar el proyecto.
+
+### 🧩 Instalación de WSL en Windows
+1. Abre **PowerShell como administrador** y ejecuta:
+   ```bash
+   wsl --install
+   ```
+2. Reinicia tu computadora cuando el sistema lo solicite.
+3. Al volver a iniciar, selecciona Ubuntu como distribución predeterminada (o instálala desde Microsoft Store).
+4. Luego abre tu terminal de Ubuntu desde Windows y continúa con las instrucciones de este README desde allí.
+
+⚙️ Requisitos del Sistema
+
+Para una ejecución fluida del entorno completo (Airflow + Hive + Redash):
+
+Recurso	Mínimo Recomendado	Recomendado
+CPU	Intel Core i7 (10ma generación o superior)	Intel Core i9 13ma generación
+RAM	16 GB	32 GB o más
+Sistema Operativo	Linux / WSL2 con Ubuntu	Ubuntu 22.04 o superior
+
+⚠️ Durante las pruebas, con los tres contenedores activos, el sistema llegó a utilizar más de 16 GB de RAM.
+Si notas que tu equipo se vuelve lento o el sistema se congela, no se recomienda continuar la ejecución simultánea de los tres servicios.
+
+El espacio en disco lo gestiona internamente WSL o el sistema Linux.
+
 ## 🧰 Tecnologías Utilizadas
 
 - **Apache Airflow** – Orquestación de flujos ETL  
@@ -23,7 +51,7 @@ Antes de comenzar, asegúrate de tener instalado **Docker** y **Docker Compose**
 
 ---
 
-## 🚀 Instrucciones de Instalación
+##🧩 Instalación y Configuración
 
 ### 1️⃣ Clonar el repositorio
 ```bash
@@ -113,3 +141,37 @@ docker compose up -d
 
 Una vez iniciado, Redash estará disponible en:
 👉 http://localhost:5000
+--- 
+## 🧠 Uso del Proyecto
+
+Una vez que los tres servicios estén activos (Airflow, Hive y Redash), sigue los pasos a continuación para ejecutar los procesos ETL y visualizar los dashboards.
+
+### 🪶 En Airflow
+
+1. Abre Airflow:
+👉 http://localhost:8080/dags
+
+2. En la barra de búsqueda, escribe cargar para listar los DAGs del proyecto.
+Deberás ver los DAGs similares a la siguiente imagen
+<img width="1919" height="1137" alt="image" src="https://github.com/user-attachments/assets/9bc61b0d-4f5b-46ba-8e7c-c12cc88ebdc9" />
+
+Ejecuta los DAGs en el siguiente orden:
+
+🗃️ Tras ejecutar estos DAGs, la base de datos cacao se escribirá dentro de Hive.
+Asegúrate de tener ambos contenedores (Airflow y Hive) levantados
+
+### 📊 En Redash
+
+1. Abre Redash:
+👉 http://localhost:5000
+
+2. Ingresa las siguientes credenciales:
+Usuario: admin@email.com
+Contraseña: admin123
+
+Una vez dentro del panel de control, accede a Dashboards.
+
+Podrás refrescar los dashboards con la información cargada desde Hive.
+
+🔗 En Redash, toda la configuración de conexión, consultas SQL y dashboards ya está preconfigurada.
+Solo asegúrate de que los pasos de Airflow y Hive se hayan ejecutado correctamente para evitar errores de datos inexistentes.
