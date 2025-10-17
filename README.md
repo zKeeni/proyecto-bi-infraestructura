@@ -144,9 +144,9 @@ Levantar Redash:
 ```bash
 docker compose up -d
 ```
-
 Una vez iniciado, Redash estará disponible en:
 👉 http://localhost:5000
+
 
 --- 
 ## 🧠 Uso del Proyecto
