@@ -69,6 +69,9 @@ sudo chmod -R 777 hdfs hive-logs hive_warehouse postgres_data
 
 Levantar los contenedores:
 ```bash
+cd compose/
+```
+```bash
 docker compose up -d
 ```
 
